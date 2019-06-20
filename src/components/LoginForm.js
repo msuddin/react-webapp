@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.props.getName}>
+            <form onSubmit={this.props.logUserIn}>
                 <input type="text" name="name" placeholder="name"/>
                 <button>Login</button>
             </form>

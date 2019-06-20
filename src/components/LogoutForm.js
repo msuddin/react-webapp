@@ -6,7 +6,7 @@ class LogoutForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.props.getOut}>
+            <form onSubmit={this.props.logUserOut}>
                 <p>{this.props.heroName}</p>
                 <button>Logout</button>
             </form>

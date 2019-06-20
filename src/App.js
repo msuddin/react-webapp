@@ -9,22 +9,19 @@ class App extends React.Component {
     // State - this is used to keep track of any changes in the component
     // State contains key value pairs
     state = {
-        heroName: "placeholder hero name",
+        heroName: null,
         loggedOn: false
     };
 
     // the makeup of the signature of the below functions binds the constructor as part of the function signature
-    getName = async (e) => {
+    logUserIn = async (e) => {
         // Line below stops the page from refreshing when this method is called
         e.preventDefault();
 
-        const inputField = e.target.elements.name.value;
-        const heroName = await fetch(`http://localhost:8080/hi/${inputField}`)
+        const heroName = await fetch(`http://localhost:8080/hi/${e.target.elements.name.value}`)
             //.then(function(response) {
             .then((response) => response.json())
-            .then(function(parsedData) {
-                return parsedData.message
-            });
+            .then((parsedData) => parsedData.message);
 
         this.setState({
             heroName: heroName,
@@ -32,7 +29,7 @@ class App extends React.Component {
         })
     };
 
-    getOut = async (e) => {
+    logUserOut = async (e) => {
         e.preventDefault();
         this.setState({
             loggedOn: false
@@ -47,13 +44,13 @@ class App extends React.Component {
             return (
                 <div>
                     <Titles/>
-                    <LoginForm getName={this.getName}/>
+                    <LoginForm logUserIn={this.logUserIn}/>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <LogoutForm heroName={this.state.heroName} getOut={this.getOut}/>
+                    <LogoutForm heroName={this.state.heroName} logUserOut={this.logUserOut}/>
                 </div>
             )
         }
