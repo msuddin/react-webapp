@@ -16,6 +16,10 @@ Answer:
 * It also controls page render based on user login/logout status
 * The repo also contains a single src/App.test.js
 
+## Dependencies
+* This project assumes that http://localhost:8080/hi/{id} is available
+* This project assumes that the java jar found at https://github.com/msuddin/sample-spring-hibernate-local-postgres-db is running locally
+
 ## Instructions
 From the root directory of the project, run the following command:
 ```
