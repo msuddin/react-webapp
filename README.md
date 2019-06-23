@@ -21,7 +21,11 @@ Answer:
 * This project assumes that the java jar found at https://github.com/msuddin/sample-spring-hibernate-local-postgres-db is running locally
 
 ## Instructions
-From the root directory of the project, run the following command:
+From the root directory of the project, run the following command to firstly install all dependencies:
+```
+npm install
+```
+Now run the application by running the following:
 ```
 npm start
 ```
